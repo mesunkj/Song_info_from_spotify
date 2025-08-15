@@ -1,7 +1,8 @@
 import requests
 import base64
 import urllib3
-from g_sp_token import  CLIENT_ID, CLIENT_SECRET
+# from g_sp_token import  CLIENT_ID, CLIENT_SECRET
+from g_sp_token import get_spotify_token, CLIENT_ID, CLIENT_SECRET
 # 關閉 SSL 驗證警告 (等同 curl 的 --insecure)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -72,3 +73,4 @@ if __name__ == "__main__":
             print("  Audio Features:", data)
         else:
             print(f"[FAIL] {name} ({spotify_url}) -> 狀態碼 {status}")
+
